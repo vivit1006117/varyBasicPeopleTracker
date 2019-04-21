@@ -15,7 +15,6 @@ class VisitorRoutes {
 
     public static getForToday(req: Request, res: Response) {
         const {type, minAge, maxAge} = req.query;
-        console.log(type);
         Helper.getVisitorForTodayAction(type, minAge, maxAge, res);
     }
 

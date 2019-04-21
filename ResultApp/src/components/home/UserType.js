@@ -44,6 +44,10 @@ class UserType extends Component {
 				});
 	};
 
+	navigate() {
+		this.props.navigation.navigate("Details", {type: this.state.type, minAge: this.state.minAge, maxAge: this.state.maxAge});
+	}
+
 	shouldRender(ageRange) {
 		if (this.state.isLoading) {
 			return (<View style={UserTypeStyles.container}>
@@ -55,13 +59,13 @@ class UserType extends Component {
 				<Text style={UserTypeStyles.title}>Total:</Text>
 				<Text style={UserTypeStyles.value}>{this.state.count}</Text>
 				<Icon style={UserTypeStyles.icon} name='refresh' onPress={this.fetchVisitorDetails.bind(this)}/>
-				<Icon style={UserTypeStyles.icon} name='arrow-forward' onPress={this.fetchVisitorDetails.bind(this)}/>
+				<Icon style={UserTypeStyles.icon} name='arrow-forward' onPress={this.navigate.bind(this)}/>
 			</View>);
 		}
 	}
 
 	render() {
-		const {ageRange, type, minAge, maxAge} = this.props;
+		const {ageRange} = this.props;
 		return (
 			<MainContainer>
 				<ContainerSection>
