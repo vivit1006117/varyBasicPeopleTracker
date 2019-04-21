@@ -8,6 +8,10 @@ class VisitorRoutes {
         Helper.getAllVisitorAction(type, res);
     }
 
+    public static getAllTest(req: Request, res: Response) {
+        Helper.getAllTestVisitorAction(res);
+    }
+
     public static add(req: Request, res: Response) {
         Helper.addVisitorActionGenerator(req, res);
     }
@@ -25,6 +29,7 @@ class VisitorRoutes {
 
     public init() {
         this.router.get("/getAll", VisitorRoutes.getAll);
+        this.router.get("/getAllTest", VisitorRoutes.getAllTest);
         this.router.post("/addVisitor", VisitorRoutes.add);
         this.router.get("/getTodayVisitor", VisitorRoutes.getAllVisitorsToday);
     }

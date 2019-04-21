@@ -1,6 +1,6 @@
 import {Response} from "express";
 import {
-    createVisitor,
+    createVisitor, getAllVisitors,
     getVisitorByTypeAndAge,
     getVisitorsByType,
     getVisitorsToday,
@@ -29,6 +29,12 @@ export function updateVisitorDetails(type, minAge, maxAge, res: Response) {
 
 export function getAllVisitor(type, res: Response) {
     getVisitorsByType(type, (err, visitors) => {
+        internalServerErrorHandler(err, res, res.send(visitors));
+    });
+}
+
+export function getAllTheVisitor(res: Response) {
+    getAllVisitors((err, visitors) => {
         internalServerErrorHandler(err, res, res.send(visitors));
     });
 }

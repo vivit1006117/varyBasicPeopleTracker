@@ -6,6 +6,7 @@ const HomeStyles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: '#F5FCFF',
+		width: 50,
 	}
 });
 
