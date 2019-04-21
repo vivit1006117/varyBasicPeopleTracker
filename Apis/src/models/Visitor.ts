@@ -35,6 +35,7 @@ const visitDate = moment().format("MM-DD-YYYY");
 
 export const createVisitor = (type, minAge, maxAge, callback) => {
 	const visitor = new Visitor({type, minAge, maxAge, totalVisited: 1, visitDate});
+ console.log("6th");
 	return visitor.save(callback);
 };
 
@@ -44,6 +45,8 @@ export const updateVisitor = (visitor, callback) => {
 
 export const getVisitorByTypeAndAge = (type, minAge, maxAge, callback) => {
 	const param = {$and: [{type}, {minAge}, {maxAge}, {visitDate}]};
+ console.log("3st");
+ console.log(param);
 	return Visitor.findOne(param, callback);
 };
 

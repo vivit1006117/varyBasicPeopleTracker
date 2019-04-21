@@ -5,7 +5,8 @@
   ],
   "jsRules": {},
   "rules": {
-    "indent": [true, "tabs", 4],
+    "no-console": [false, "log", "error"],
+    "indent": [false, "tabs", 4],
     "quotemark": [true, "double", "jsx-double"],
     "semi": ["error", "always"],
     "max-line-length": [true, 300],

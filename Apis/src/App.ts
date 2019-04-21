@@ -2,7 +2,6 @@ import * as bodyParser from "body-parser";
 import * as express from "express";
 import { connect } from "mongoose";
 import * as logger from "morgan";
-import * as passport from "passport";
 import VisitorRoutes from "./routes/VisitorRoutes";
 
 class App {
@@ -17,8 +16,6 @@ class App {
 	}
 
 	private middleware(): void {
-		this.express.use(passport.initialize());
-		this.express.use(passport.session());
 		this.express.use(logger("dev"));
 		this.express.use(bodyParser.json());
 		this.express.use(bodyParser.urlencoded({ extended: false }));

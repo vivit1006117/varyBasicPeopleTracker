@@ -3,30 +3,31 @@ import * as Helper from "../helpers/VisitorHelper";
 
 class VisitorRoutes {
 
-	public static getAll(req: Request, res: Response) {
-		const {type} = req.body;
-		Helper.getAllVisitorAction(type, res);
-	}
+    public static getAll(req: Request, res: Response) {
+        const {type} = req.query;
+        Helper.getAllVisitorAction(type, res);
+    }
 
-	public static add(req: Request, res: Response) {
-		Helper.addVisitorActionGenerator(req, res);
-	}
+    public static add(req: Request, res: Response) {
+        Helper.addVisitorActionGenerator(req, res);
+    }
 
-	public static getAllVisitorsToday(req: Request, res: Response) {
-		Helper.getVisitorForTodayActionGenerator(res);
-	}
-	public router: Router;
+    public static getAllVisitorsToday(req: Request, res: Response) {
+        Helper.getVisitorForTodayActionGenerator(res);
+    }
 
-	constructor() {
-		this.router = Router();
-		this.init();
-	}
+    public router: Router;
 
-	public init() {
-		this.router.get("/visitor", VisitorRoutes.getAll);
-		this.router.put("/addVisitor", VisitorRoutes.add);
-		this.router.get("/getTodayVisitor", VisitorRoutes.getAllVisitorsToday);
-	}
+    constructor() {
+        this.router = Router();
+        this.init();
+    }
+
+    public init() {
+        this.router.get("/getAll", VisitorRoutes.getAll);
+        this.router.post("/addVisitor", VisitorRoutes.add);
+        this.router.get("/getTodayVisitor", VisitorRoutes.getAllVisitorsToday);
+    }
 }
 
 const visitorRoutes = new VisitorRoutes();
