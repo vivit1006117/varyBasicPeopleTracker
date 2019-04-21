@@ -1,0 +1,58 @@
+[
+  {
+    "_id": { "$oid": "5b773d8533b80378e5437d71" },
+    "email": "a@doctor.com",
+    "password": "$2a$10$IMGVQdX4/Q7VHCpX8hcUnOESIKe1uAcTCoPayJ1dk49Tp.CtcN5kG",
+    "mobile": "9876789871",
+    "role": { "$oid" : "5b773d8533b80378e5437d78" },
+    "confirmation": {"$oid": "5b773d8533b80378e5437d71"}
+  },
+  {
+    "_id": { "$oid": "5b773d8533b80378e5437d72" },
+    "email":"b@doctor.com",
+    "password":"$2a$10$IMGVQdX4/Q7VHCpX8hcUnOESIKe1uAcTCoPayJ1dk49Tp.CtcN5kG",
+    "mobile": "9876789872",
+    "role": { "$oid" :"5b773d8533b80378e5437d76" },
+    "confirmation": {"$oid": "5b773d8533b80378e5437d71"}
+  },
+  {
+    "_id": { "$oid": "5b773d8533b80378e5437d73" },
+    "email":"c@doctor.com",
+    "password":"$2a$10$IMGVQdX4/Q7VHCpX8hcUnOESIKe1uAcTCoPayJ1dk49Tp.CtcN5kG",
+    "mobile": "9876789873",
+    "role": { "$oid" :"5b773d8533b80378e5437d77" },
+    "confirmation": {"$oid": "5b773d8533b80378e5437d71"}
+  },
+  {
+    "_id": { "$oid": "5b773d8533b80378e5437d74" },
+    "email": "a@nurse.com",
+    "password": "$2a$10$IMGVQdX4/Q7VHCpX8hcUnOESIKe1uAcTCoPayJ1dk49Tp.CtcN5kG",
+    "mobile": "9876789874",
+    "role": { "$oid" : "5b773d8533b80378e5437d78" },
+    "confirmation": {"$oid": "5b773d8533b80378e5437d71"}
+  },
+  {
+    "_id": { "$oid": "5b773d8533b80378e5437d75" },
+    "email":"b@nurse.com",
+    "password":"$2a$10$IMGVQdX4/Q7VHCpX8hcUnOESIKe1uAcTCoPayJ1dk49Tp.CtcN5kG",
+    "mobile": "9876789875",
+    "role": { "$oid" :"5b773d8533b80378e5437d76" },
+    "confirmation": {"$oid": "5b773d8533b80378e5437d71"}
+  },
+  {
+    "_id": { "$oid": "5b773d8533b80378e5437d18" },
+    "email":"c@nurse.com",
+    "password":"$2a$10$IMGVQdX4/Q7VHCpX8hcUnOESIKe1uAcTCoPayJ1dk49Tp.CtcN5kG",
+    "mobile": "9876789876",
+    "role": { "$oid" :"5b773d8533b80378e5437d77" },
+    "confirmation": {"$oid": "5b773d8533b80378e5437d71"}
+  },
+  {
+    "_id": { "$oid": "5b773d8533b80378e5437d28" },
+    "email":"a@admin.com",
+    "password":"$2a$10$IMGVQdX4/Q7VHCpX8hcUnOESIKe1uAcTCoPayJ1dk49Tp.CtcN5kG",
+    "mobile": "9876789877",
+    "role": { "$oid" :"5b773d8533b80378e5437d76" },
+    "confirmation": {"$oid": "5b773d8533b80378e5437d71"}
+  }
+]

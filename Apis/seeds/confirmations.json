@@ -1,0 +1,10 @@
+[
+  {
+    "_id": {
+      "$oid": "5b773d8533b80378e5437d71"
+    },
+    "email": false,
+    "phone": true,
+    "token": "asdf"
+  }
+]

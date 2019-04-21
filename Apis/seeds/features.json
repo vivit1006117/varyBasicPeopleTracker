@@ -1,0 +1,44 @@
+[
+  {
+    "_id": {
+      "$oid": "5b773d8533b80378e5437d71"
+    },
+    "key": "login",
+    "description": "Allows user to login to the app"
+  },
+  {
+    "_id": {
+      "$oid": "5b773d8533b80378e5437d72"
+    },
+    "key": "add_patient",
+    "description": "Allows user to add patient"
+  },
+  {
+    "_id": {
+      "$oid": "5b773d8533b80378e5437d73"
+    },
+    "key": "consult",
+    "description": "Allows user to login to the app"
+  },
+  {
+    "_id": {
+      "$oid": "5b773d8533b80378e5437d74"
+    },
+    "key": "schedule",
+    "description": "Allows user to login to the app"
+  },
+  {
+    "_id": {
+      "$oid": "5b773d8533b80378e5437d75"
+    },
+    "key": "go_online",
+    "description": "Allows user to login to the app"
+  },
+  {
+    "_id": {
+      "$oid": "5b773d8533b80378e5437d76"
+    },
+    "key": "all_appointments",
+    "description": "Allows user to login to the app"
+  }
+]

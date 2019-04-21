@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.INTERNAL_SERVER_ERROR = 500;
+exports.REQUEST_PARAMETER_NOT_PROPER = 1001;
+exports.DUPLICATE_USER = 2001;
+exports.USER_NOT_FOUND = 2002;
+exports.USER_HAS_BEEN_DEACTIVATED = 2003;
+exports.ROLE_NOT_ASSIGNED = 3001;
+exports.ROLE_NOT_FOUND = 3002;
+exports.DUPLICATE_ROLE = 3003;
+exports.FEATURE_NOT_ASSIGNED = 4001;

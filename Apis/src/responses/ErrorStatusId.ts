@@ -1,0 +1,12 @@
+export const INTERNAL_SERVER_ERROR = 500;
+export const REQUEST_PARAMETER_NOT_PROPER = 1001;
+
+export const DUPLICATE_USER = 2001;
+export const USER_NOT_FOUND = 2002;
+export const USER_HAS_BEEN_DEACTIVATED = 2003;
+
+export const ROLE_NOT_ASSIGNED = 3001;
+export const ROLE_NOT_FOUND = 3002;
+export const DUPLICATE_ROLE = 3003;
+
+export const FEATURE_NOT_ASSIGNED = 4001;

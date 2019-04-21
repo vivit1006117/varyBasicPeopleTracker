@@ -1,0 +1,22 @@
+version: '3'
+services:
+  mongo:
+    image: "mongo"
+    ports:
+      - "27017:27017"
+  api:
+    image: remassis-user-api
+    build: .
+    command: node dist/index.js
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - "mongo"
+
+  adminmongo:
+    image: "mrvautin/adminmongo"
+    ports:
+      - "1234:1234"

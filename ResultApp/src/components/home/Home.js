@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Text, View} from "react-native";
+import {View} from "react-native";
 import HomeStyles from "../../styles/home/HomeStyle";
 import {MainContainer} from "../common/MainContainer";
 import {ContainerSection} from "../common/ContainerSection";
