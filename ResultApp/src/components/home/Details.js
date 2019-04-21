@@ -51,7 +51,7 @@ class Details extends Component {
 	shouldRender() {
 		if (this.state.isLoading) {
 			return (<View style={UserTypeStyles.container}>
-				<ActivityIndicator size="large" color="#c8d604"/>
+				<ActivityIndicator size="large" color="#4440BA"/>
 			</View>)
 		} else {
 			return <FlatList

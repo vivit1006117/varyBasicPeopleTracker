@@ -31,7 +31,7 @@ const Visitor = model("Visitor", visitorSchema);
 
 export default Visitor;
 
-const visitDate = moment().format("MM-DD-YYYY");
+const visitDate = moment().utcOffset("+05:30").format("MM-DD-YYYY");
 
 export const createVisitor = (type, minAge, maxAge, callback) => {
 	const visitor = new Visitor({type, minAge, maxAge, totalVisited: 1, visitDate});
@@ -52,6 +52,7 @@ export const getVisitorByTypeAndAge = (type, minAge, maxAge, callback) => {
 };
 
 export const getVisitorByTypeAndAgeForToday = (type, minAge, maxAge, callback) => {
+	console.log(moment());
 	const param = {$and: [{type}, {minAge}, {maxAge}, {visitDate}]};
 	return Visitor.findOne(param, callback);
 };

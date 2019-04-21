@@ -13,6 +13,7 @@ import {internalServerErrorHandler} from "./GenericActions";
 
 function saveVisitorDetails(existingVisitor, type, minAge, maxAge, res: Response) {
     if (existingVisitor) {
+        console.log(existingVisitor);
         existingVisitor.totalVisited = parseInt(existingVisitor.totalVisited, 10) + 1;
         updateVisitor(existingVisitor, (err, visitor) => {
             internalServerErrorHandler(err, res, res.send(SUCCESS.VISITOR_ADDED()));
@@ -25,7 +26,7 @@ function saveVisitorDetails(existingVisitor, type, minAge, maxAge, res: Response
 }
 
 export function updateVisitorDetails(type, minAge, maxAge, res: Response) {
-    getVisitorByTypeAndAge(type, minAge, maxAge, (err, visitor) => {
+    getVisitorByTypeAndAgeForToday(type, minAge, maxAge, (err, visitor) => {
         internalServerErrorHandler(err, res, saveVisitorDetails(visitor, type, minAge, maxAge, res));
     });
 }
