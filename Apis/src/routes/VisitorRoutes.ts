@@ -8,6 +8,17 @@ class VisitorRoutes {
         Helper.getAllVisitorAction(type, res);
     }
 
+    public static getAllFor(req: Request, res: Response) {
+        const {type, minAge, maxAge} = req.query;
+        Helper.getAllVisitorForAction(type, minAge, maxAge, res);
+    }
+
+    public static getForToday(req: Request, res: Response) {
+        const {type, minAge, maxAge} = req.query;
+        console.log(type);
+        Helper.getVisitorForTodayAction(type, minAge, maxAge, res);
+    }
+
     public static getAllTest(req: Request, res: Response) {
         Helper.getAllTestVisitorAction(res);
     }
@@ -29,6 +40,8 @@ class VisitorRoutes {
 
     public init() {
         this.router.get("/getAll", VisitorRoutes.getAll);
+        this.router.get("/getAllFor", VisitorRoutes.getAllFor);
+        this.router.get("/getForTodayBy", VisitorRoutes.getForToday);
         this.router.get("/getAllTest", VisitorRoutes.getAllTest);
         this.router.post("/addVisitor", VisitorRoutes.add);
         this.router.get("/getTodayVisitor", VisitorRoutes.getAllVisitorsToday);

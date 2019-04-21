@@ -47,6 +47,11 @@ export const getAllVisitors = (callback) => {
 };
 
 export const getVisitorByTypeAndAge = (type, minAge, maxAge, callback) => {
+	const param = {$and: [{type}, {minAge}, {maxAge}]};
+	return Visitor.find(param, callback);
+};
+
+export const getVisitorByTypeAndAgeForToday = (type, minAge, maxAge, callback) => {
 	const param = {$and: [{type}, {minAge}, {maxAge}, {visitDate}]};
 	return Visitor.findOne(param, callback);
 };
