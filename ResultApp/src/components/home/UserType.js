@@ -1,16 +1,17 @@
 import React, {Component} from "react";
-import {Text, View} from "react-native";
+import {ActivityIndicator, Text, View} from "react-native";
 import {ContainerSection} from "../common/ContainerSection";
 import {MainContainer} from "../common/MainContainer";
 import UserTypeStyles from "../../styles/home/UserTypeStyles";
 import axios from "axios";
-// import {Icon} from "native-base";
+import {Icon} from "native-base";
 
 class UserType extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			count: 0,
+			isLoading: true,
 			type: props.type,
 			minAge: props.minAge,
 			maxAge: props.maxAge
@@ -34,7 +35,8 @@ class UserType extends Component {
 			})
 				.then((res) => {
 					this.setState({
-						count: res.data.count
+						count: res.data.count,
+						isLoading: false
 					});
 				})
 				.catch(() => {
@@ -42,17 +44,28 @@ class UserType extends Component {
 				});
 	};
 
+	shouldRender(ageRange) {
+		if (this.state.isLoading) {
+			return (<View style={UserTypeStyles.container}>
+				<ActivityIndicator size="large" color="#c8d604"/>
+			</View>)
+		} else {
+			return (<View style={UserTypeStyles.container}>
+				<Text style={UserTypeStyles.header}>{ageRange}</Text>
+				<Text style={UserTypeStyles.title}>Total:</Text>
+				<Text style={UserTypeStyles.value}>{this.state.count}</Text>
+				<Icon style={UserTypeStyles.icon} name='refresh' onPress={this.fetchVisitorDetails.bind(this)}/>
+				<Icon style={UserTypeStyles.icon} name='arrow-forward' onPress={this.fetchVisitorDetails.bind(this)}/>
+			</View>);
+		}
+	}
+
 	render() {
 		const {ageRange, type, minAge, maxAge} = this.props;
 		return (
 			<MainContainer>
 				<ContainerSection>
-					<View style={UserTypeStyles.container}>
-						<Text style={UserTypeStyles.header}>{ageRange}</Text>
-						<Text style={UserTypeStyles.title}>Total:</Text>
-						<Text style={UserTypeStyles.value}>{this.state.count}</Text>
-						{/*<Icon name='add' onPress={this.fetchVisitorDetails.bind(this)}/>*/}
-					</View>
+					{this.shouldRender(ageRange)}
 				</ContainerSection>
 			</MainContainer>
 		)

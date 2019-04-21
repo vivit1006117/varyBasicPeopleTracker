@@ -21,6 +21,9 @@ const UserTypeStyles = StyleSheet.create({
 	value: {
 		flex: 1,
 		justifyContent: 'flex-end',
+	},
+	icon: {
+		paddingLeft: 15
 	}
 });
 
