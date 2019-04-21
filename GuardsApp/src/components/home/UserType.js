@@ -23,11 +23,19 @@ class UserType extends Component {
 				}
 			})
 				.then((res) => {
+					if (res.data.statusid === 200)
+						return Toast.show({
+							text: "updated",
+							buttonText: "Okay",
+							duration: 3000,
+							type: "success",
+							position: "top"
+						});
 					return Toast.show({
-						text: res.data,
+						text: " Failed",
 						buttonText: "Okay",
 						duration: 3000,
-						type: "success",
+						type: "danger",
 						position: "top"
 					});
 				})

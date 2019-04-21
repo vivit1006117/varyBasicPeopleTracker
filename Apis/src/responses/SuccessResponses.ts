@@ -2,8 +2,8 @@ import SuccessResponse from "../ResponceModel/SuccessResponseModel";
 import * as MESSAGES from "./SuccessMessages";
 import * as TYPE from "./SuccessTypes";
 
-export function USER_ADDED(email: string) {
-	return new SuccessResponse(MESSAGES.USER_ADDED, TYPE.USER, email);
+export function VISITOR_ADDED() {
+	return new SuccessResponse(MESSAGES.USER_ADDED, TYPE.USER, null);
 }
 
 export function USER_ACTIVATION_SUCCESS(username: string) {
